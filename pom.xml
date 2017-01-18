@@ -12,7 +12,8 @@
 
 	<modules>
 		<module>rjb-blog-multitenancy-starter</module>
-		<!-- <module>rjb-blog-multitenancy-complete</module> -->
+		<module>rjb-blog-multitenancy-complete</module>
+		<module>rjb-blog-multitenancy-extras</module>
 	</modules>
 
 	<properties>
