@@ -1,4 +1,3 @@
--- test comment
 CREATE SCHEMA RJB_BLOG_MULTITENANCY_1;
 
 -- a single application 'Product' table
