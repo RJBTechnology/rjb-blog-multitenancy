@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.rjb.blog.multitenancy.entity">
+
+	<class name="Product" table="PRODUCT">
+
+		<id name="id" type="long" column="id">
+			<generator class="identity" />
+		</id>
+
+		<version name="version" type="long" column="version" />
+
+		<property name="tenantId" type="string" column="tenant_id" />
+
+		<property name="createdUser" type="string" column="created_user" />
+		<property name="createdDate" type="timestamp" column="created_timestamp" />
+		<property name="updatedUser" type="string" column="updated_user" />
+		<property name="updatedDate" type="timestamp" column="updated_timestamp" />
+
+		<property name="category" type="string" column="category" />
+		<property name="sku" type="string" column="sku" />
+
+	</class>
+
+	<query name="com.rjb.blog.multitenancy.entity.Product.getBySku">from Product p where p.sku = :sku</query>
+
+	<query name="com.rjb.blog.multitenancy.entity.Product.getByCategory">from Product p where p.category = :category</query>
+
+</hibernate-mapping>
